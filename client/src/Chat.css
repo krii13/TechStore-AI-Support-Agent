@@ -1,0 +1,192 @@
+/* --- LAYOUT --- */
+.chat-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    border: 1px solid #eef2f6;
+}
+
+@media (max-width: 768px) {
+    .chat-container {
+        margin: 0;
+        height: 100vh;
+        border-radius: 0;
+        max-width: 100%;
+    }
+}
+
+/* --- HEADER (Updated with Gradient) --- */
+.chat-header {
+    /* MATCHING THE LOGIN PAGE */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+.chat-header h3 { margin: 0; font-size: 1.2rem; font-weight: 700; }
+
+.logout-btn {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+}
+.logout-btn:hover { background: rgba(255,255,255,0.4); }
+
+/* --- MESSAGES AREA --- */
+.messages-area {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #f8f9fc; /* Very light grey/blue tint */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.message-wrapper.user { align-self: flex-end; align-items: flex-end; }
+.message-wrapper.bot { align-self: flex-start; align-items: flex-start; }
+
+.bubble {
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* User Bubble: Uses the Primary Blue from the gradient */
+.user .bubble {
+    background: #667eea; 
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+/* Bot Bubble: White */
+.bot .bubble {
+    background: white;
+    color: #333;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+.timestamp {
+    font-size: 0.7rem;
+    color: #999;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+/* --- PRODUCT CARDS --- */
+.product-carousel {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.product-card {
+    min-width: 140px;
+    max-width: 140px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 10px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.product-card:hover { transform: translateY(-3px); }
+
+.product-image {
+    width: 100%;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.product-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-price {
+    color: #764ba2; /* Matches the purple accent */
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* --- INPUT AREA --- */
+.input-area {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.chat-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    outline: none;
+    font-size: 1rem;
+    background: #f8f9fa;
+    transition: border-color 0.2s;
+}
+
+.chat-input:focus { 
+    background: white;
+    border-color: #667eea; 
+}
+
+/* Send Button: Gradient Circle */
+.send-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(118, 75, 162, 0.3);
+    font-size: 1.2rem;
+}
+
+.send-btn:hover { transform: scale(1.05); }
+.send-btn:disabled { background: #ccc; box-shadow: none; cursor: not-allowed; }

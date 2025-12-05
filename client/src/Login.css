@@ -1,0 +1,122 @@
+/* --- Background: Blue-Purple Gradient --- */
+.login-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* The exact Blue to Purple gradient from the image */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- The White Card --- */
+.login-card {
+    background: #ffffff;
+    padding: 50px 40px;
+    border-radius: 10px; /* Slightly sharper corners like the image */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 360px; /* Narrower card to match the image */
+    text-align: center;
+}
+
+/* --- Typography --- */
+.login-card h2 {
+    margin: 0 0 40px 0; /* More space below title */
+    color: #333;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* Hide the subtitle paragraph to match the image exactly */
+.login-card p {
+    display: none; 
+}
+
+/* --- Inputs --- */
+.form-group {
+    margin-bottom: 25px; /* More spacing between inputs */
+    text-align: left;
+    position: relative; /* For custom underlines if needed */
+}
+
+.form-group label {
+    display: none; /* The image uses placeholders, not labels */
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 0; /* Remove side padding for a cleaner look */
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #ddd; /* Only bottom border */
+    border-radius: 0;
+    font-size: 1rem;
+    color: #555;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-control:focus {
+    outline: none;
+    border-bottom-color: #764ba2; /* Purple underline on focus */
+}
+
+/* --- The Gradient Button --- */
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    /* Exact Blue -> Purple Gradient for button */
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded pill shape */
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase; /* Match the "LOGIN" text style */
+    letter-spacing: 1px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.6);
+}
+
+/* --- Error Messages --- */
+.error-msg {
+    background: #fff5f5;
+    border-left: 4px solid #764ba2;
+    color: #c53030;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* --- Footer Links --- */
+.toggle-link {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.toggle-link span {
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.toggle-link span:hover {
+    color: #764ba2;
+}
