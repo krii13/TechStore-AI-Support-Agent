@@ -8,6 +8,5 @@ appsettings.Development.json
 # --- React Ignore ---
 node_modules/
 build/
-.env
 .DS_Store
 Thumbs.db
