@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-// ⚠️ REPLACE WITH YOUR ACTUAL BACKEND PORT
-const BASE_URL = 'https://localhost:7171/api'; 
+// 1. Get the URL from your environment file (.env.production or .env)
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const api = axios.create({
-    baseURL: BASE_URL,
+    // 2. Use the variable we defined above
+    baseURL: apiUrl,
     headers: {
         'Content-Type': 'application/json',
     },
