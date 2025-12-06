@@ -85,10 +85,10 @@ const Chat = () => {
                                 {msg.products.map(p => (
                                     <div key={p.id} className="product-card">
                                         <img 
-                                            src={p.imageUrl} 
+                                            src={p.imageUrl || p.ImageUrl || p.image}
                                             alt={p.name} 
                                             className="product-image"
-                                            onError={(e) => {e.target.src='https://via.placeholder.com/150?text=No+Img'}}
+                                            onError={(e) => { e.target.src = 'https://placehold.co/150?text=No+Image' }}
                                         />
                                         <div className="product-name" title={p.name}>{p.name}</div>
                                         <div className="product-price">${p.price}</div>
