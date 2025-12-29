@@ -25,7 +25,10 @@ namespace CustomerSupportApp.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserDto request)
         {
-           
+            if (await _context.Users.AnyAsync(u => u.Username == request.Username))
+            {
+                return BadRequest("Username is already taken. Please choose another.");
+            }
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
             var user = new User

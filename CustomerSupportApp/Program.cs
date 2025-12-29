@@ -62,7 +62,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp",
-        b => b.WithOrigins("http://localhost:3000")
+        b => b.WithOrigins("http://localhost:3000", "https://tech-store-ai-support-agent.vercel.app")
               .AllowAnyMethod()
               .AllowAnyHeader());
 });
